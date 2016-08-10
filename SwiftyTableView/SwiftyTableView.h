@@ -5,7 +5,7 @@
 //  Created by DianQK on 7/19/16.
 //  Copyright © 2016 T. All rights reserved.
 //
-yansukeji9876
+
 #import <UIKit/UIKit.h>
 
 //! Project version number for SwiftyTableView.

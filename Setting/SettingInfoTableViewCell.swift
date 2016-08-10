@@ -52,14 +52,14 @@ class SettingInfoTableViewCell: UITableViewCell {
 private extension SettingInfoTableViewCell {
     func configSubviews() {
         contentView.addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentView).offset(15)
             make.leading.equalTo(self.contentView).offset(30)
             make.bottom.equalTo(self.contentView).offset(-15)
         }
         
         contentView.addSubview(detailInfoLabel)
-        detailInfoLabel.snp_makeConstraints { (make) in
+        detailInfoLabel.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentView).offset(15)
             make.trailing.equalTo(self.contentView).offset(-30)
             make.bottom.equalTo(self.contentView).offset(-15)

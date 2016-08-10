@@ -56,17 +56,17 @@ class SettingAvatarTableViewCell: UITableViewCell {
 private extension SettingAvatarTableViewCell {
     func configSubviews() {
         contentView.addSubview(titleLabel)
-        titleLabel.snp_makeConstraints { (make) in
+        titleLabel.snp.makeConstraints { (make) in
             make.top.leading.equalTo(self.contentView).offset(30)
             make.bottom.equalTo(self.contentView).offset(-30)
         }
         
         contentView.addSubview(avatarImageView)
-        avatarImageView.snp_makeConstraints { (make) in
+        avatarImageView.snp.makeConstraints { (make) in
             make.top.equalTo(self.contentView).offset(20)
             make.trailing.equalTo(self.contentView).offset(-30)
             make.bottom.equalTo(self.contentView).offset(-20)
-            make.width.equalTo(self.avatarImageView.snp_height)
+            make.width.equalTo(self.avatarImageView.snp.height)
         }
     }
 }

@@ -19,7 +19,7 @@ private enum Style {
 class ViewController: UIViewController {
     
     private lazy var settingTableView: UITableView = {
-        let tableView = UITableView(frame: CGRect.zero, style: .Grouped)
+        let tableView = UITableView(frame: CGRect.zero, style: .grouped)
         tableView.tableFooterView = UIView()
         return tableView
     }()
@@ -35,13 +35,13 @@ class ViewController: UIViewController {
         // MARK: 添加视图
 
         view.addSubview(settingTableView)
-        settingTableView.snp_makeConstraints { (make) in
+        settingTableView.snp.makeConstraints { (make) in
             make.edges.equalTo(self.view)
         }
         
         // MARK: - 注册 TableView Cell
         
-        settingTableView.st_registerReuseCells(
+        settingTableView.st.registerReuseCells(
             withIdentifierables: [
                 SettingAvatarTableViewCell.self,
                 SettingInfoTableViewCell.self]
@@ -52,12 +52,12 @@ class ViewController: UIViewController {
         provider.configureCell = { provider, tableView, indexPath, value in
             switch value {
             case let .image(title, image):
-                let cell = tableView.st_dequeueReusableCell(withIdentifierable: SettingAvatarTableViewCell.self, for: indexPath)
+                let cell = tableView.st.dequeueReusableCell(withIdentifierable: SettingAvatarTableViewCell.self, for: indexPath)
                 cell.title = title
                 cell.avatarImage = image
                 return cell
             case let .text(title, detail):
-                let cell = tableView.st_dequeueReusableCell(withIdentifierable: SettingInfoTableViewCell.self, for: indexPath)
+                let cell = tableView.st.dequeueReusableCell(withIdentifierable: SettingInfoTableViewCell.self, for: indexPath)
                 cell.title = title
                 cell.detailInfo = detail
                 return cell
@@ -79,7 +79,7 @@ class ViewController: UIViewController {
             let titleLabel = UILabel()
             headerView.addSubview(titleLabel)
             titleLabel.text = value
-            titleLabel.snp_makeConstraints { (make) in
+            titleLabel.snp.makeConstraints { (make) in
                 make.leading.equalTo(headerView).offset(20)
                 make.bottom.equalTo(headerView).offset(-10)
             }
@@ -114,6 +114,7 @@ class ViewController: UIViewController {
         provider.sectionModels = sections
         
     }
+    
     
 }
 
